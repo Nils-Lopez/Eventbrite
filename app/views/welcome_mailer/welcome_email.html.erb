@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+	<h2>Salut <%= @user.first_name %> et bienvenue sur mon super site !</h2>
+	<p>
+		Tu t'es inscrit sur le meilleur site avec l'email : <%=@user.email%>
+	</p>
+	<p>
+		Pour accéder à ton compte connecte toi sur: <%= @url %>
+	</p>
+
+</body>
+</html>
