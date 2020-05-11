@@ -1,0 +1,2 @@
+class NewParticipMailer < ApplicationMailer
+end

@@ -6,7 +6,8 @@ class Event < ApplicationRecord
 	validates :location, presence: true
 	validate :duration_5
 	validate :start_date_after_now
-
+	belongs_to :user
+	
 	private
 
  	def start_date_after_now
