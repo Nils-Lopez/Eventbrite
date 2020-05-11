@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-1.times do 
+10.times do 
 	color = Faker::Color.color_name
-	User.create(email: "nilslopezmartin@gmail.com", encrypted_password: color, description: "Je suis #{color}", first_name: "#{color}prénom", last_name: "#{color}nom")
+	User.create(email: "#{color}@yopmail.com", encrypted_password: color, description: "Je suis #{color}", first_name: "#{color}prénom", last_name: "#{color}nom")
 end	
