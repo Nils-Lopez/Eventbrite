@@ -4,10 +4,17 @@
 	<title></title>
 </head>
 <body>
-	<h1><%=current_user.email%></h1>
+	<br><br><br>
+	<div class="card w-50 border-0">
+		<div class="card-header bg-dark border-0">
+			<h1 class="card-title"><%=@user.first_name%> <%=@user.last_name%></h1>
+		</div>
+		<div class="card-body">
+			<p>Bio : "<%=@user.description%>"</p>
+			<a href="mailto:<%=current_user.email%>"><%=@user.email%></a><br><br>
+			<p style="color:lightgrey;">Member of Eventbrite since <%=@user.created_at.strftime("%d of %B, %Y")%></p>
 
-	<h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
-
-	<p><%=current_user.description%></p>
+		</div>
+	</div>
 </body>
 </html>
