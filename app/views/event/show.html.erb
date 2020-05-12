@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	
+	<br><br><br>
 	<div class="card w-50 rounded-0">
 
 		<div class="card-header bg-dark rounded-0">
@@ -29,7 +29,7 @@
 				</li>
 				<br>
 				<li>
-					by <a href="<%=user_path(@author.id)%>"><%=@author_name%></a>
+					by <%if current_user == @author%><a href="<%=user_path(current_user.id)%>">You</a><%else%><a href="mailto:<%=@author.email%>"><%=@author_name%></a><%end%>
 				</li>
 			</ul>
 		</div>

@@ -5,9 +5,14 @@
 </head>
 <body>
 	<br><br><br>
-	<div class="card w-50 border-0">
-		<div class="card-header bg-dark border-0">
+	<div class="card w-50 rounded-0">
+		<div class="card-header bg-dark rounded-0">
 			<h1 class="card-title"><%=@user.first_name%> <%=@user.last_name%></h1>
+			<a href="<%=edit_user_registration_path(current_user.id)%>">
+				<span class="btn btn-primary" style="float:right;">
+						Edit profile
+				</span>
+			</a>
 		</div>
 		<div class="card-body">
 			<p>Bio : "<%=@user.description%>"</p>

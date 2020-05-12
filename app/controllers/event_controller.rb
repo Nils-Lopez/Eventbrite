@@ -1,4 +1,6 @@
 class EventController < ApplicationController
+	before_action :authenticate_user, only: [:show, :new]
+
   def index
   	@events = []
   	Event.all.each do |event|
@@ -22,6 +24,15 @@ class EventController < ApplicationController
   	@event = Event.find(params[:id])
   	@author = @event.user
   	@author_name = @author.first_name + " " + @author.last_name
+  end
+
+  private
+
+  def authenticate_user
+  	unless user_signed_in?
+  		flash[:danger] = "You must be logged to create or show events !"
+  		redirect_to new_user_session_path
+  	end	
   end
 
 end
