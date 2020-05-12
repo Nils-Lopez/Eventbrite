@@ -20,7 +20,7 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <h1 class="navbar-brand">EventBrite</h1>
+            <a class="navbar-brand"  href="<%=root_path%>">EventBrite</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,12 +30,12 @@
                       <a class="nav-link" href="<%=root_path%>">Home</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="<%=new_event_controller_path%>">New event</a>
+                      <a class="nav-link" href="<%=new_event_path%>">New event</a>
                   </li>
                   <li>
                     <% if user_signed_in? %>
                       <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-dark rounded-0 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           My account
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -47,7 +47,7 @@
                       </div>
                     <%else%>
                       <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-dark rounded-0 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Account
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -62,7 +62,7 @@
         </nav>
     </header>
   <center>
-    <br><br>
+    
     <%= yield %>
   </center>
   </body>

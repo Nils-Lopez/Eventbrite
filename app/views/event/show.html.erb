@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<div class="card w-50 rounded-0">
+
+		<div class="card-header bg-dark rounded-0">
+			<h1><%=@event.title%></h1>
+			<span class="btn btn-primary rounded-0" style="float:right;">
+					<%=@event.price%> €
+			</span>
+		</div>
+		
+		<div class="card-body">
+			<ul>
+				<li>
+					"<%=@event.desc%>"
+				</li>
+				<br>
+				<li>
+					- <%=@event.start_date.strftime("%d/%m/%Y")%> (duration: <%=@event.duration%> minutes)
+				</li>
+				<br>
+				<li>
+					- In <%=@event.location%>
+				</li>
+				<br>
+				<li>
+					by <a href="<%=user_path(@author.id)%>"><%=@author_name%></a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>

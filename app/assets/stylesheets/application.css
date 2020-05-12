@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron {
+	background-image: url(https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: 'Roboto';
+}
+ .card-header {
+ 	color: white;
+ }
+ ul {
+  list-style-type: none;
+ }
+@media only screen and (min-width: 600px) { 
+	.card_event {
+		max-width: 31%;
+	}
+	.jumbotron {
+		min-height: 650px;
+	}
+	.jumbotitle {
+		font-size: 10em;
+	}
+}
+@media only screen and (min-width: 1100px) { 
+	.jumbotitle {
+		font-size: 15em;
+	}
+}

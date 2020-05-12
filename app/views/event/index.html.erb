@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventbrite</title>
+</head>
+<body>
+	  	<div class="jumbotron">
+		    
+		      	<h1 class="mb-1 jumbotitle text-white">
+		        Eventbrite
+		      	</h1>
+		      	<br>
+		      	<div class="card-body w-50" style="background-color: #dfe6e9; opacity: 90%; border-radius: 5px;">
+
+  					With <strong>Eventbrite</strong> you can <strong>register for events</strong> like concerts, charity events or workshops <strong>in one click</strong>
+				
+				</div>
+		      
+	  	</div>
+	<% flash.each do |key, value| %>	
+		<div class="alert alert-success flash <%= key %>" role="alert">
+			<%= value %>
+		</div>
+	<% end %>
+	<h1>Voici tous les événements disponibles :</h1>
+	<br>
+	<div class="card-deck" style="margin-right: 5%; margin-left: 5%;">
+		<%i = 0%>
+		<%@events.each do |event|%>
+
+	  		<div class="card rounded-0 card_event">
+	  			<div class="card-header bg-dark rounded-0">
+	  				<h5 class="card-title"><%=event.title%></h5>
+	  			</div>
+	    		<div class="card-body">
+	      			<p class="card-text">Description : <%=event.desc%></p>
+	      			<p class="card-text" style="color:#b2bec3;">in <%=event.location%></p>
+	      			<a href="<%=event_path(event.id)%>" class="btn btn-secondary rounded-0">More...</a>
+	   		 	</div>
+	  		</div>
+	  		<%i += 1%>
+
+	  		<%if i == 3%>
+	  			</div>
+	  			<br>
+	  			<div class="card-deck" style="margin-right: 5%; margin-left: 5%;">
+	  			<%i = 0%>
+	  		<%end%>
+
+		<%end%>
+	</div>
+</body>
+</html>
