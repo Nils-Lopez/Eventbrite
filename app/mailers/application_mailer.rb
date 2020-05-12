@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  	default from: 'nils.lpzz@gmail.com'
+  	default from: 'nils.testdev@gmail.com'
   	layout 'mailer'
 
   	def welcome_email(user)
