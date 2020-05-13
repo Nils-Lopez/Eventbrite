@@ -9,8 +9,11 @@
 
 		<div class="card-header bg-dark rounded-0">
 			<h1><%=@event.title%></h1>
-			<span class="btn btn-primary rounded-0" style="float:right;">
+			<span class="btn btn-primary rounded-0" style="float:left;">
 					<%=@event.price%> €
+			</span>
+			<span class="btn bg-light rounded-0" style="float:right; color:#b2bec3;">
+					<%=@event.participants.count%> participant<%if @event.participants.count > 1%>s<%end%>
 			</span>
 		</div>
 		
@@ -28,9 +31,21 @@
 					- In <%=@event.location%>
 				</li>
 				<br>
+				
 				<li>
 					by <%if current_user == @author%><a href="<%=user_path(current_user.id)%>">You</a><%else%><a href="mailto:<%=@author.email%>"><%=@author_name%></a><%end%>
 				</li>
+				<%if current_user != @event.user%>
+					<% if @event.users.include?(current_user) %>
+						<a href="<%=participant_path(@participation.id)%>" class="btn btn-danger rounded-0" style="float:right;" data-confirm="Are you sure you want to leave ?" data-method="DELETE">
+							Leave this event
+						</a>
+					<%else%>
+						<a href="<%=new_participant_path(@event.id)%>" class="btn btn-success rounded-0 btn-lg" style="float:right;">
+							Join event
+						</a>
+					<%end%>
+				<%end%>
 			</ul>
 		</div>
 

@@ -1,0 +1,23 @@
+<br><br><br>
+<div class="card rounded-0 w-50">
+	<div class="rounded-0 card-header bg-dark">
+		<h1 class="card-title"><%=@event.title%></h1>
+		<h3 class="card-subtitle"><%=@event.start_date.strftime("%d/%m/%Y")%></h3>
+	</div>
+	<div class="card-body rounded-0">
+		<%= form_tag url_for(action: 'create'), method: "post" do %>
+					  
+				<form method="POST"></br>
+					
+					<% flash.each do |key, value| %>
+    					<div class="flash <%= key %> text-danger"><%= value %></div>
+					<% end %>				
+					<br>
+					<input type="hidden" name="event" value="<%=@event.id%>">
+					<input type="submit" value="Join !" class="btn btn-primary rounded-0">
+				</form>
+
+		<% end %>
+	</div>
+
+</div>

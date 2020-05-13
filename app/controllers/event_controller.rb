@@ -24,6 +24,7 @@ class EventController < ApplicationController
   	@event = Event.find(params[:id])
   	@author = @event.user
   	@author_name = @author.first_name + " " + @author.last_name
+  	@participation = Participant.find_by(event: @event, user: current_user)
   end
 
   private

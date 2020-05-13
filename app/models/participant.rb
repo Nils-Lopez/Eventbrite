@@ -6,7 +6,7 @@ class Participant < ApplicationRecord
 
 	private
 
-	def welcome_send
-		NewParticipantMailer.notif_email(self.event.user, self.user, self.event).deliver_now
+	def notif_organisateur
+		NewParticipMailer.notif_email(self.event.user, self.user, self.event).deliver_now
 	end
 end

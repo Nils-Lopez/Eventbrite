@@ -13,12 +13,10 @@ class ApplicationMailer < ActionMailer::Base
 
   	end
 
-  	def notif_email(user, participant, event)
-		
+  	def notif_email(user, participant, event)		
 	  	@user = user
 	  	@participant = participant
-		mail(to: @user.email, subject: "Nouveau participant")
-		@event = event
-
+	  	@event = event
+			mail(to: @user.email, subject: "Nouveau participant")
   	end
 end
